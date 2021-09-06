@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description"content="Web site created using create-react-app"/>
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="./Implementation.js" type="text/javascript"></script>
+  <title> MoveLang Editor </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <style>
+    table {
+      border: 0.5px solid blue;
+      border-collapse: collapse;
+      height:50vh;
+      width:50vh;
+      counter-reset: rowNumber;
+    }
+    table tr:not(:first-child) {
+    counter-increment: rowNumber;
+    }
+    table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+    }
+    td {
+     border: 0.5px solid blue;
+     border-collapse: collapse;}
+    th{
+     border: 0.5px solid blue;
+        vertical-align: inherit;
+        font-weight:normal;
+        text-align: center;
+    }
+  </style>
+  <style>
+  .noShow
+  {
+    visibility: hidden;
+  }
+  </style>
+  <style>
+  .button {
+    background-color:  #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-right: 6px;
+    cursor: pointer;
+    width: 120px;
+
+  }
+  .button:hover {
+    background-color: RoyalBlue;
+  }
+  </style>
+</head>
+<body id="cbBody" class="intro" onload="defult();" style="background-color:#E7E9EB;">
+    <center>
+      <h1 id="subTitle" title="Move language" > Move language</h1><br>
+      <div id="innerBody" class="InnerBody" style="height:100rem; width:100%; margin: auto;">
+        <div class="MainLeftDiv" id="mainLeftDiv" style="height:100rem; width:42%; margin-left:8%; margin-right:0%; float:left;">
+            <input type="button" value="Run"  onclick="Run();"   class="button" />
+            <input type="button" value="Download Results"  onclick="download();" class="button" />
+            <input type="button" value="Copy Results"  onclick="Copyresult();" class="button" />
+            <input type="button" value="Clear Results"  onclick="Clearresult();" class="button"  />
+            <div id="root" style=" margin-left: 10px; margin-right: 6px;"></div>
+            <div id="runresult"style=" margin-left: 10px;"></div><br>
+            <div id="OutputInnerBodyDiv3"style=" margin-left: 10px;" ></div><br>
+            <div class="noShow" id="result1" >
+              <input type="button" value="Try Again" id="try" onclick="showhide();" class="button" style=" width:42%; height:50px;"/ >
+            </div>
+        </div>
+        <div class="MainRightDiv" id="UpRightDiv" style="height:100rem; width:42%; margin-left:8%; margin-right:0%; float:left;">
+          <input type="button" value="NewQuestiont"  onclick="NewQuestiont();" class="button" style=" width:42%;"/ ><br><br><br>
+          <span id="outputMsg1" style=" margin-left: 10px;" >
+            Questions:
+          </span><br><br>
+          <center><div id="OutputInnerBodyDiv1" style=" margin-left: 10px; " ></div></center><br><br><br><br><br>
+          <div id="runstep" style=" margin-left: 10px;"></div><br>
+          <center><div id="OutputInnerBodyDiv2" style=" margin-left: 10px;" ></div></center><br>
+        </div>
+    </center>
+</body>
+</html>
